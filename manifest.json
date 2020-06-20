@@ -1,0 +1,31 @@
+{
+    "permissions": [
+        "tabs",
+        "http://*/*",
+        "https://*/*",
+        "webRequest",
+        "<all_urls>",
+        "activeTab"
+        
+    ],
+    "default_locale": "en",
+    "manifest_version": 2,
+    "name": "Easy Dark Mod",
+    "description": "Easy Dark Mod.",
+    "version": "3.0",
+    "author": "Portala.tech",
+    "background": {
+        "script": ["src/background.js"] 
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "src/contentScript.js"
+            ],
+            "run_at": "document_start"
+        }
+    ]
+}
